@@ -21,6 +21,11 @@
   <nav>
     <div class="nav-inner">
       <div class="nav-brand">My e-Portfolio</div>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
       <div class="nav-links">
         <a href="#about">About Me</a>
         <a href="#purpose">Course Purpose</a>
@@ -284,6 +289,16 @@
     RBFC 7213 - Legal Systems &amp; Social Political Thoughts | e-Portfolio | Ian Ohuru
   </footer>
 
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', isOpen);
+      });
+    }
+  </script>
 </body>
 </html>
 
