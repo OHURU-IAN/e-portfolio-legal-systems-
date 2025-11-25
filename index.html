@@ -297,6 +297,15 @@
         const isOpen = navLinks.classList.toggle('open');
         navToggle.setAttribute('aria-expanded', isOpen);
       });
+
+      navLinks.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          if (navLinks.classList.contains('open')) {
+            navLinks.classList.remove('open');
+            navToggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
     }
   </script>
 </body>
